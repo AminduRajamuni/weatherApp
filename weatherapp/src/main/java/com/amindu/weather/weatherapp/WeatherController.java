@@ -10,7 +10,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 @RestController
 @RequestMapping("/api/weather")
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "https://weatherappamindu.vercel.app/")
 public class WeatherController {
 
     @Value("${API_KEY}")
