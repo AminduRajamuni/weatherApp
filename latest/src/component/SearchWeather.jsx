@@ -282,7 +282,9 @@ function SearchWeather() {
 
     const searchCity = async (cityName) => {
         try {
-            const response = await axios.get(`http://localhost:8080/api/weather/${cityName}`)
+            // This will use the Railway URL on Vercel, and fallback to localhost for your local testing
+            const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:8080";
+            const response = await axios.get(`${API_BASE_URL}/api/weather/${cityName}`);
             setWeather(response.data);
             setError(null);
         } catch (error) {
